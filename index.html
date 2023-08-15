@@ -7,7 +7,7 @@
         <meta name="author" content="ZoneZ" />
         <meta name="description" content="欢迎来到我的个人博客" />
         <meta name="keywords" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
         <link rel="icon" href="/images/favicon.png" />
         <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
 <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
@@ -45,7 +45,7 @@
                     <div id="loading-circle">
                         <h2>LOADING</h2>
                         <p>加载过慢请开启缓存 浏览器默认开启</p>
-                        <img src="/images/loading.gif" alt="加载动画" />
+                        <img src="/images/loading.gif" />
                     </div>
                 </div>
             </transition>
@@ -169,6 +169,15 @@
     </a>
     <div class="category-and-date">
         
+        <span class="category">
+            <a href="/categories/%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                测试文件
+            </a>
+        </span>
+        
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
@@ -194,7 +203,16 @@ npx hexo server
     </div>
     <div class="post-tags">
         
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
         
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/test/" style="color: #ffa2c4">test</a>
+        </span>
         
     </div>
     <a href="/2023/08/15/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" class="go-post">阅读全文</a>
@@ -205,6 +223,15 @@ npx hexo server
         <h2 class="post-title">Hello World</h2>
     </a>
     <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                测试文件
+            </a>
+        </span>
         
         <span class="date">
             <span class="icon">
@@ -237,7 +264,16 @@ npx hexo server
     </div>
     <div class="post-tags">
         
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
         
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/test/" style="color: #ffa2c4">test</a>
+        </span>
         
     </div>
     <a href="/2023/08/15/hello-world/" class="go-post">阅读全文</a>
@@ -310,7 +346,7 @@ npx hexo server
             
             <transition name="fade">
                 <div id="preview" ref="preview" v-show="previewShow">
-                    <img id="preview-content" ref="previewContent" alt="预览加载" />
+                    <img id="preview-content" ref="previewContent" />
                 </div>
             </transition>
             
