@@ -3,7 +3,7 @@
 <html lang="zh">
     <head>
         <meta charset="utf-8" />
-        <title>ZoneZ的个人博客</title>
+        <title>WSL与Docker | ZoneZ的个人博客</title>
         <meta name="author" content="ZoneZ" />
         <meta name="description" content="欢迎来到我的个人博客" />
         <meta name="keywords" content="" />
@@ -38,7 +38,9 @@
 
 
 
-<script src="/js/lib/home.js"></script>
+
+
+
 
 <link rel="stylesheet" href="/css/main.css" />
 
@@ -148,31 +150,17 @@
 </transition>
 
             <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-                <div id="home-head">
-    <div id="home-background" ref="homeBackground" data-images="/images/bg1.jpg,/images/bg2.jpg,/images/bg3.jpg,/images/bg4.jpg,/images/bg5.jpg"></div>
-    <div id="home-info" @click="homeClick">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>ZoneZ的个人博客</h1>
-                <h3></h3>
-                <h5>欢迎来到我的个人博客</h5>
-            </div>
-        </span>
+                <div class="article">
+    <div>
+        <h1>WSL与Docker</h1>
     </div>
-</div>
-<div id="home-posts-wrap" true ref="homePostsWrap">
-    <div id="home-posts">
-        
-
-<div class="post">
-    <a href="/2023/08/17/WSL%E4%B8%8EDocker/">
-        <h2 class="post-title">WSL与Docker</h2>
-    </a>
-    <div class="category-and-date">
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/8/17
+        </span>
         
         <span class="category">
             <a href="/categories/%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/">
@@ -183,206 +171,170 @@
             </a>
         </span>
         
-        <span class="date">
+        
+        <span class="tags">
             <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
+                <i class="fa-solid fa-tags fa-fw"></i>
             </span>
-            2023/8/17
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
             
-            <p>在Windows系统下，配置WSL2与安装Windows Docker</p>
-
             
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/WSL/" style="color: #ffa2c4">WSL</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/Docker/" style="color: #00a596">Docker</a>
-        </span>
-        
-    </div>
-    <a href="/2023/08/17/WSL%E4%B8%8EDocker/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/08/15/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/">
-        <h2 class="post-title">第一篇文章</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                测试文件
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
+            <span class="tag">
+                
+                <a href="/tags/WSL/" style="color: #03a9f4">WSL</a>
             </span>
-            2023/8/15
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
             
-            <p>这是新建的第一篇文章，用来测试。</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/test/" style="color: #ffa2c4">test</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/myself/" style="color: #00bcd4">myself</a>
-        </span>
-        
-    </div>
-    <a href="/2023/08/15/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/08/15/hello-world/">
-        <h2 class="post-title">Hello World</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                测试文件
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
+            <span class="tag">
+                
+                <a href="/tags/Docker/" style="color: #ffa2c4">Docker</a>
             </span>
-            2023/8/15
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
             
-            <p>Hexo初始生成文章</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/test/" style="color: #00bcd4">test</a>
         </span>
         
     </div>
-    <a href="/2023/08/15/hello-world/" class="go-post">阅读全文</a>
-</div>
+    
+    <div class="content" v-pre>
+        <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+<ul>
+<li><a href="#配置windows功能">配置Windows功能</a></li>
+<li><a href="#配置wsl2安装ubuntu">配置WSL2，安装Ubuntu</a>
+<ul>
+<li><a href="#安装与初始化">安装与初始化</a></li>
+<li><a
+href="#如果你习惯或需要systemd来管理你的wsl">如果你习惯或需要systemd来管理你的WSL</a></li>
+</ul></li>
+<li><a href="#下载与安装docker">下载与安装Docker</a></li>
+<li><a href="#完成与测试">完成与测试</a>
+<ul>
+<li><a href="#查看docker版本">查看Docker版本</a></li>
+<li><a href="#测试docker运行hello-world">测试Docker运行Hello
+World</a></li>
+</ul></li>
+</ul>
+<!-- /code_chunk_output -->
+<h2 id="配置windows功能">配置Windows功能</h2>
+<p>打开Windows功能面板</p>
+<p>勾选<code>适用于Linux的Windows子系统</code>与<code>虚拟机平台</code>这两个功能</p>
+<p><img src="/Pics/WSL与Docker_p1.jpg" style="width:50%;" alt="本地图片测试" /></p>
+<p>勾选完成后，点击确定。有可能需要重启，重启即可。</p>
+<hr />
+<h2 id="配置wsl2安装ubuntu">配置WSL2，安装Ubuntu</h2>
+<h3 id="安装与初始化">安装与初始化</h3>
+<p>按下Windows+X，选择Windows PowerShell(管理员)。</p>
+<p>此后的所有CMD指令都需要管理员权限，每次都需要选择管理员模式打开。</p>
+<p>在powershell中输入<code>wsl --set-default-version 2</code>，设置WSL版本为2。</p>
+<p>在微软商店中搜索<code>Ubuntu</code>，选择<code>Ubuntu 22.04.2 LTS</code>，点击获取。</p>
+<p>完成安装后打开，进行初始化配置，输入你的用户名和密码，此密码同时作为管理员密码。</p>
+<p>输入指令<code>sudo apt update</code>，更新apt源。随后输入<code>sudo apt upgrade</code>，升级apt源。</p>
+<p>输入<code>apt install language-pack-zh-hans*</code>，安装中文语言包。</p>
+<p>输入<code>cd /etc/default</code>，进入语言设置文件目录。</p>
+<p>输入<code>sudo vim locale</code>，编辑语言设置文件。</p>
+<p>在文件中找到<code>LANG</code>，将其值修改为<code>LANG="zh_CN.utf8"</code>，保存并退出。</p>
+<p>关闭控制台窗口，重新打开一个power
+shell窗口，输入<code>wsl --shutdown</code>，关闭WSL。</p>
+<p>再次输入wsl，打开WSL，输入<code>locale</code>，查看语言设置是否成功。</p>
+<h3
+id="如果你习惯或需要systemd来管理你的wsl">如果你习惯或需要systemd来管理你的WSL</h3>
+<p>在Ubuntu中输入<code>echo -e "[boot]\nsystemd = true" &gt; /etc/wsl.conf</code>，创建WSL配置文件。</p>
+<p>在powershell中输入<code>wsl --shutdown</code>，关闭WSL。</p>
+<p>输入<code>wsl --update</code>，更新WSL。此时会安装Windows Subsystem
+for Linux。</p>
+<p>安装完成后，输入<code>wsl</code>，打开WSL，可以使用命令进行确认：<code>systemctl list-unit-files --type=service</code>，该命令将显示服务的状态。</p>
+<hr />
+<h2 id="下载与安装docker">下载与安装Docker</h2>
+<p>在官网上下载Docker Desktop for Windows，安装完成后，打开Docker
+Desktop。</p>
+<p>在上方菜单栏中选择齿轮按钮，打开设置。在左侧菜单栏中点击Resources选择WSL
+Integration。</p>
+<p><img src="/Pics/WSL与Docker_p2.jpg" style="width:80%;" alt="本地图片测试" /></p>
+<p>在右侧的WSL Integration中，勾选Ubuntu-22.04，点击Apply &amp;
+Restart。</p>
+<p>如果你的C盘容量告急，在Resources中找到Advanced，点击进入。</p>
+<p>把<code>Disk image location</code>修改为你想要的位置，点击Apply &amp;
+Restart。</p>
+<hr />
+<h2 id="完成与测试">完成与测试</h2>
+<p>在powershell中输入<code>wsl</code>，打开WSL。</p>
+<h3 id="查看docker版本">查看Docker版本</h3>
+<p>输入<code>docker version</code>，查看Docker版本。</p>
+<pre class="bash"><code>$ docker version
 
+Client: Docker Engine - Community
+Cloud integration: v1.0.35-desktop+001
+Version:           24.0.5
+ API version:       1.43
+ Go version:        go1.20.6
+ Git commit:        ced0996
+ Built:             Fri Jul 21 20:35:45 2023
+ OS/Arch:           linux/amd64
+ Context:           default
 
-        <div class="page-current">
-    <div class="prev">
-        
-    </div>
-    <div class="page-index">
-        
-        <span class="current">1</span>
-        
-    </div>
-    <div class="next">
-        
-    </div>
-</div>
+Server: Docker Desktop
+ Engine:
+  Version:          24.0.5
+  API version:      1.43 (minimum version 1.12)
+  Go version:       go1.20.6
+  Git commit:       a61e2b4
+  Built:            Fri Jul 21 20:35:45 2023
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          1.6.21
+  GitCommit:        3dce8eb055cbb6872793272b4f20ed16117344f8
+ runc:
+  Version:          1.1.7
+  GitCommit:        v1.1.7-0-g860f061
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        de40ad0
+</code></pre>
+<h3 id="测试docker运行hello-world">测试Docker运行Hello World</h3>
+<p>输入<code>docker run hello-world</code>，测试Docker是否正常运行。</p>
+<pre class="bash"><code>
+$ docker run hello-world
+
+Hello from Docker!
+
+This message shows that your installation appears to be working correctly.
+ 
+ To generate this message, Docker took the following steps:
+
+ 1. The Docker client contacted the Docker daemon.
+
+ 2. The Docker daemon pulled the &quot;hello-world&quot; image from the Docker Hub.(amd64)
+
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+   to your terminal.
+ 
+ To try something more ambitious, you can run an Ubuntu container with:
+  $ docker run -it ubuntu bash
+ 
+ Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+ 
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+</code></pre>
+<hr />
+<p>恭喜你，你已经成功配置了WSL2与Docker。🎉🎉🎉</p>
+<center>
+<a href="#layout">返回顶部</a>
+</center>
 
     </div>
     
-    <div id="home-card">
-        <div id="card-style">
-    <div id="card-div">
-        <div class="avatar">
-            <img src="/images/avatar.jpg" alt="avatar" />
-        </div>
-        <div class="name">ZoneZ</div>
-        <div class="description">
-            <p>Description 作者很懒，什么都没留下...</p>
-
-        </div>
-        
-        <div class="icon-links">
-            
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://github.com/zhwuyuhehe">
-                    <i
-                        class="fa-brands fa-github fa-fw"
-                    ></i>
-                </a>
-            </span>
-            
-        </div>
-        
-        
-        <div class="friend-links">
-            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://github.com/zhwuyuhehe">GitHub</a>
-            </div>
-            
-            <div class="friend-link">
-                <a href="mailto:zhwuyuhehe@qq.com">Email</a>
-            </div>
-            
-        </div>
-        
+    
+    
+    
+    <div id="comment">
+        <div id="giscus-container" class="giscus"></div>
     </div>
-</div>
-
-    </div>
+    
+    
+    
     
 </div>
 
@@ -414,6 +366,29 @@
             
         </div>
         <script src="/js/main.js"></script>
+        
+        
+<script
+    src="https://giscus.app/client.js"
+    data-repo="zhwuyuhehe/zhwuyuhehe.github.io"
+    data-repo-id="R_kgDOKHFv7Q"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOKHFv7c4CYn6U"
+    data-mapping="pathname"
+    data-strict="1"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    crossorigin
+    async
+></script>
+
+
+
+
+
         
     </body>
 </html>
