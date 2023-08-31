@@ -1,0 +1,414 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8" />
+        <title>记录一次MySQL练习作业 | ZoneZ的个人博客</title>
+        <meta name="author" content="ZoneZ" />
+        <meta name="description" content="欢迎来到我的个人博客" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.8/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.8/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" alt="加载中" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>ZONEZ的个人博客</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;主页</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;关于</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;归档</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;分类</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;标签</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;ZONEZ的个人博客</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">主页</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">关于</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">归档</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">分类</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">标签</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div class="article">
+    <div>
+        <h1>记录一次MySQL练习作业</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/8/30
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                数据库
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="color: #03a9f4">数据库</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/MySQL/" style="color: #ff7d73">MySQL</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h2 id="查询员工表所有数据并说明使用的缺点">1.
+查询员工表所有数据，并说明使用*的缺点</h2>
+<pre class="sql"><code>SELECT * FROM employees;
+使用*会降低代码可读性，会使代码更难以维护。当表格结构发生更改时，查询可能会返回不再需要的列，导致代码错误。</code></pre>
+<h2 id="查询所员工的-email-全名公司-email-统一以-qq.com-结尾">2.
+查询所员工的 email 全名,公司 email 统一以 <span class="citation"
+data-cites="qq.com">@qq.com</span> 结尾</h2>
+<pre class="sql"><code>SELECT employee_id, CONCAT(email,&quot;@qq.com&quot;) FROM employees;</code></pre>
+<h2 id="打印公司里所有的-manager_id去除重复数据">3. 打印公司里所有的
+manager_id(去除重复数据)</h2>
+<pre class="sql"><code>SELECT DISTINCT manager_id FROM employee;</code></pre>
+<h2 id="按照入职日期由新到旧排列员工信息">4.
+按照入职日期由新到旧排列员工信息</h2>
+<pre class="sql"><code>SELECT * FROM employees ORDER BY hiredate DESC;</code></pre>
+<h2 id="按照工资由高到低的顺序显示员工信息">5.
+按照工资由高到低的顺序显示员工信息</h2>
+<pre class="sql"><code>SELECT * FROM employees ORDER BY salary DESC;</code></pre>
+<h2 id="查询职位job_id为st_clerk的员工的工资">6.
+查询职位(JOB_ID)为'ST_CLERK'的员工的工资</h2>
+<pre class="sql"><code>SELECT salary FROM employees WHERE job_id = &#39;ST_CLERK&#39;;</code></pre>
+<h2 id="查询-50-号部门的员工姓名以及全年工资.">7. 查询 50
+号部门的员工姓名以及全年工资.</h2>
+<pre class="sql"><code>SELECT first_name, last_name, salary * 12 AS annual_salary FROM employees WHERE department_id = 50;</code></pre>
+<h2 id="查询-80-号部门工资大于-7000-的员工的全名与工资">8. 查询 80
+号部门工资大于 7000 的员工的全名与工资</h2>
+<pre class="sql"><code>SELECT CONCAT(first_name, &#39; &#39;, last_name) AS full_name, salary FROM employees WHERE department_id = 80 AND salary &gt; 7000;</code></pre>
+<h2 id="查询工资高于-7000-但是没有提成的所有员工.">9. 查询工资高于 7000
+但是没有提成的所有员工.</h2>
+<pre class="sql"><code>SELECT * FROM employees WHERE salary &gt; 7000 AND commission_pct IS NULL;</code></pre>
+<h2 id="查询入职日期在-1997-5-1-到-1997-12-31-之间的所有员工信息">10.
+查询入职日期在 1997-5-1 到 1997-12-31 之间的所有员工信息</h2>
+<pre class="sql"><code>SELECT * FROM employees WHERE DATE(hiredate) BETWEEN &#39;1997-05-01&#39; AND &#39;1997-12-31&#39;;</code></pre>
+<h2 id="显示姓名中没有l字的员工的详细信息">11.
+显示姓名中没有'L'字的员工的详细信息</h2>
+<pre class="sql"><code>SELECT * FROM employees WHERE first_name NOT LIKE &#39;%L%&#39; AND last_name NOT LIKE &#39;%L%&#39;;</code></pre>
+<h2 id="查询电话号码以-8-开头的所有员工信息.">12. 查询电话号码以 8
+开头的所有员工信息.</h2>
+<pre class="sql"><code>SELECT * FROM employees WHERE phone_number LIKE &#39;8%&#39;;</code></pre>
+<h2 id="查询-80-号部门中-last_name-以-n-结尾的所有员工信息">13. 查询 80
+号部门中 last_name 以 n 结尾的所有员工信息</h2>
+<pre class="sql"><code>SELECT * FROM employees WHERE department_id = 80 AND last_name LIKE &#39;%n&#39;;</code></pre>
+<h2 id="查询所有-last_name-由四个以上字母组成的员工信息">14. 查询所有
+last_name 由四个以上字母组成的员工信息</h2>
+<pre class="sql"><code>SELECT * FROM employees WHERE LENGTH(last_name) &gt;= 4;</code></pre>
+<h2 id="查询-first_name-中包含na的员工信息.">15. 查询 first_name
+中包含"na"的员工信息.</h2>
+<pre class="sql"><code>SELECT * FROM employees WHERE first_name LIKE &#39;%na%&#39;;</code></pre>
+<h2 id="显示公司里所有员工的工资级别使用-case-when">16.
+显示公司里所有员工的工资级别，使用 case when</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">等级</th>
+<th style="text-align: center;">条件</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">&lt;=5000</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">&gt;=5001 and &lt;=8000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">&gt;=8001 and &lt;=15000</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">D</td>
+<td style="text-align: center;">&gt;15000</td>
+</tr>
+</tbody>
+</table>
+<pre class="sql"><code>SELECT CONCAT(first_name,&#39; &#39;,last_name)AS 姓名,salary,
+   CASE
+      WHEN salary &lt;= 5000 THEN &#39;A&#39;
+      WHEN salary &gt;= 5001 AND salary &lt;= 8000 THEN &#39;B&#39;
+      WHEN salary &gt;= 8001 AND salary &lt;= 15000 THEN &#39;C&#39;
+      ELSE &#39;D&#39;
+   END AS salary_level
+FROM employees;</code></pre>
+<h2 id="根据入职时间打印出员工级别">17. 根据入职时间打印出员工级别</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">等级</th>
+<th style="text-align: center;">条件</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">资深员工</td>
+<td style="text-align: center;">85 前（包含 85）</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">普通员工</td>
+<td style="text-align: center;">86 -- 90（包含 90）</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">新员工</td>
+<td style="text-align: center;">90 年后</td>
+</tr>
+</tbody>
+</table>
+<pre class="sql"><code>SELECT CONCAT(first_name,&#39; &#39;,last_name)AS 姓名, hiredate,
+   CASE
+      WHEN YEAR(hiredate) &lt;= &#39;1985&#39; THEN &#39;资深员工&#39;
+      WHEN YEAR(hiredate) BETWEEN &#39;1986&#39; AND &#39;1990&#39; THEN &#39;普通员工&#39;
+      ELSE &#39;新员工&#39;
+   END AS employee_level
+FROM employees;</code></pre>
+<hr />
+<h2 id="函数练习">函数练习</h2>
+<h2 id="请打印出-1997-年入职的员工考察知识点单行函数">1. 请打印出 1997
+年入职的员工(考察知识点:单行函数)</h2>
+<pre class="sql"><code>SELECT * FROM employees WHERE DATE_FORMAT(hiredate, &#39;%Y&#39;) = &#39;1997&#39;;</code></pre>
+<h2
+id="把-hiredate-列看做是员工的生日求本月过生日的员工考察知识点单行函数">2.
+把 hiredate
+列看做是员工的生日,求本月过生日的员工(考察知识点:单行函数)</h2>
+<pre class="sql"><code>SELECT * FROM employees WHERE MONTH(hiredate) = MONTH(CURRENT_DATE());</code></pre>
+<h2 id="查询出员工表中最高工资最低工资和平均工资">3.
+查询出员工表中最高工资，最低工资，和平均工资</h2>
+<pre class="sql"><code>SELECT MAX(salary) AS 最高工资, MIN(salary) AS 最低工资, AVG(salary) AS 平均工资 FROM employees;</code></pre>
+<hr />
+<h2 id="数据库数据表的创建">数据库数据表的创建</h2>
+<pre class="sql"><code>/*Table structure for table `employees` */
+DROP TABLE IF EXISTS employees;
+CREATE TABLE `employees` (
+    `employee_id` INT(6) NOT NULL AUTO_INCREMENT,
+    `first_name` VARCHAR(20) NULL DEFAULT NULL COLLATE &#39;gb2312_chinese_ci&#39;,
+    `last_name` VARCHAR(25) NULL DEFAULT NULL COLLATE &#39;gb2312_chinese_ci&#39;,
+    `email` VARCHAR(25) NULL DEFAULT NULL COLLATE &#39;gb2312_chinese_ci&#39;,
+    `phone_number` VARCHAR(20) NULL DEFAULT NULL COLLATE &#39;gb2312_chinese_ci&#39;,
+    `job_id` VARCHAR(10) NULL DEFAULT NULL COLLATE &#39;gb2312_chinese_ci&#39;,
+    `salary` DOUBLE(10,2) NULL DEFAULT NULL,
+    `commission_pct` DOUBLE(4,2) NULL DEFAULT NULL,
+    `manager_id` INT(6) NULL DEFAULT NULL,
+    `department_id` INT(4) NULL DEFAULT NULL,
+    `hiredate` DATETIME NULL DEFAULT NULL,
+    PRIMARY KEY (`employee_id`) USING BTREE,
+    INDEX `dept_id_fk` (`department_id`) USING BTREE,
+    INDEX `job_id_fk` (`job_id`) USING BTREE
+)
+COLLATE=&#39;gb2312_chinese_ci&#39; ENGINE=InnoDB AUTO_INCREMENT=207;</code></pre>
+<center>
+<a href="#layout">返回顶部</a>
+</center>
+
+    </div>
+    
+    
+    
+    
+    <div id="comment">
+        <div id="giscus-container" class="giscus"></div>
+    </div>
+    
+    
+    
+    
+</div>
+
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2023 - 2023 ZoneZ的个人博客
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;ZoneZ
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" alt="预览加载" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+<script
+    src="https://giscus.app/client.js"
+    data-repo="zhwuyuhehe/zhwuyuhehe.github.io"
+    data-repo-id="R_kgDOKHFv7Q"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOKHFv7c4CYn6U"
+    data-mapping="pathname"
+    data-strict="1"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    crossorigin
+    async
+></script>
+
+
+
+
+
+        
+    </body>
+</html>
